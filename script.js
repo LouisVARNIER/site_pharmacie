@@ -23,11 +23,11 @@ const nextBtn = document.querySelector('.next');
 let currentIndex = 0;
 
 function genererCartes() {
-    container.innerHTML = ""; // Nettoyer avant d’ajouter
+    container.innerHTML = "";
     produits.forEach((p, index) => {
         const card = document.createElement('div');
         card.classList.add('card');
-        if (index === 0) card.classList.add('active'); // première visible
+        if (index === 0) card.classList.add('active');
 
         card.innerHTML = `
       <img src="${p.image}" alt="${p.titre}">
@@ -47,6 +47,27 @@ function showCard(index) {
         }
     });
 }
+
+function harmoniserLargeurCartesServices() {
+    const cartes = document.querySelectorAll('.services-list li');
+    let largeurMax = 0;
+
+    // Trouver la carte la plus large
+    cartes.forEach(card => {
+        card.style.width = 'auto';
+        const largeur = card.offsetWidth;
+        if (largeur > largeurMax) largeurMax = largeur;
+    });
+
+    // Appliquer la largeur maximale à toutes les cartes
+    cartes.forEach(card => {
+        card.style.width = `${largeurMax}px`;
+    });
+}
+
+window.addEventListener('load', harmoniserLargeurCartesServices);
+window.addEventListener('resize', harmoniserLargeurCartesServices);
+
 
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + produits.length) % produits.length;

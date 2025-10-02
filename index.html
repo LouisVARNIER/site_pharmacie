@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharmacie de l'Abbaye</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
+    <!-- Police d'écriture -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
     <h1 class="title">Pharmacie de l'Abbaye</h1>
+    <p class="welcome-message">
+        Bienvenue à la Pharmacie de l'Abbaye ! Découvrez nos gammes de produits et nos prestations pour prendre soin de votre santé.
+    </p>
 </header>
 
 <main>
     <!-- Carrousel -->
     <section class="carousel">
+        <h2>Nos gammes de produits</h2>
         <button class="prev">&#10094;</button>
         <div class="carousel-container">
             <div class="card active">
@@ -40,10 +44,73 @@
     <!-- Prestations -->
     <section class="services">
         <h2>Nos prestations</h2>
-        <p>Vaccinations, tests rapides, conseils santé personnalisés et accompagnement.</p>
+        <!-- Liste de prestations + description -->
+        <ul class="services-list">
+            <li>
+                <h3>Vaccinations</h3>
+                <p>Vaccins contre la grippe, rappel du tétanos, etc.</p>
+            </li>
+            <li>
+                <h3>Tests rapides</h3>
+                <p>Tests de glycémie, cholestérol, COVID, etc.</p>
+            </li>
+            <li>
+                <h3>Conseils santé personnalisés</h3>
+                <p>Accompagnement pour pathologies chroniques et suivi médicamenteux.</p>
+            </li>
+            <li>
+                <h3>Orthopédie & matériel médical</h3>
+                <p>Location et vente de matériel adapté à vos besoins.</p>
+            </li>
+        </ul>
     </section>
+
 </main>
 
+<!-- Horaires d'ouverture -->
+<section class="horaires">
+    <h2>
+        <!-- Image horloge + titre -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon-clock" viewBox="0 0 24 24" fill="none" stroke="#2b7a2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        Horaires d'ouverture
+    </h2>
+    <!-- Table des horaires -->
+    <table>
+        <tr>
+            <td>Lundi :</td>
+            <td>08:30 - 12:30, 14:00 - 19:00</td>
+        </tr>
+        <tr>
+            <td>Mardi :</td>
+            <td>08:30 - 12:30, 14:00 - 19:00</td>
+        </tr>
+        <tr>
+            <td>Mercredi :</td>
+            <td>08:30 - 12:30, 14:00 - 19:00</td>
+        </tr>
+        <tr>
+            <td>Jeudi :</td>
+            <td>08:30 - 12:30, 14:00 - 19:00</td>
+        </tr>
+        <tr>
+            <td>Vendredi :</td>
+            <td>08:30 - 12:30, 14:00 - 19:00</td>
+        </tr>
+        <tr>
+            <td>Samedi :</td>
+            <td>08:30 - 12:30, 14:00 - 19:00</td>
+        </tr>
+        <tr>
+            <td>Dimanche :</td>
+            <td>Fermé</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Bas de page -->
 <footer>
     <p>&copy; 2025 Pharmacie de l'Abbaye - Tous droits réservés</p>
 </footer>

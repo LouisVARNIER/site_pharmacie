@@ -23,13 +23,33 @@ header {
     color: #2b7a2b;
 }
 
+.welcome-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    max-width: 700px; /* limite la largeur du texte pour la lisibilité */
+    margin: 10px auto 30px auto; /* espace au-dessus et en-dessous */
+    line-height: 1.5;
+}
+
 .carousel {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column; /* <-- empile les éléments verticalement */
+    align-items: center;    /* centre horizontalement */
+    justify-content: flex-start;
     margin: 40px auto;
     position: relative;
     max-width: 800px;
+    width: 100%;
+}
+
+.carousel h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #2b7a2b;
 }
 
 .carousel-container {
@@ -62,6 +82,7 @@ header {
 }
 
 
+/* Boutons carrousel */
 button.prev, button.next {
     background-color: #2b7a2b;
     border: none;
@@ -71,6 +92,18 @@ button.prev, button.next {
     cursor: pointer;
     border-radius: 50%;
     transition: background 0.3s;
+
+    position: absolute;    /* <-- on sort du flux flex */
+    top: 50%;              /* centre verticalement par rapport à .carousel */
+    transform: translateY(-50%);
+}
+
+button.prev {
+    left: 10px;            /* à gauche de la zone du carrousel */
+}
+
+button.next {
+    right: 10px;           /* à droite de la zone du carrousel */
 }
 
 button.prev:hover, button.next:hover {
@@ -79,6 +112,111 @@ button.prev:hover, button.next:hover {
 
 .services {
     margin: 50px 0;
+}
+
+.services h2 {
+    font-size: 1.8rem;
+    color: #2b7a2b;
+}
+
+.services-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* espace entre cartes */
+}
+
+.services-list li {
+    background: #f1faf1;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Titres et descriptions centrés */
+.services-list h3 {
+    font-size: 1.2rem;
+    color: #2b7a2b;
+    margin-bottom: 5px;
+}
+
+.services-list p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .services-list h3 {
+        font-size: 1rem;
+    }
+    .services-list p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Section horaires */
+.horaires {
+    margin: 40px 0;
+    padding: 20px;
+    background: #e6f2e6; /* vert très clair */
+    border-radius: 12px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.horaires h2 {
+    font-size: 1.8rem;
+    color: #2b7a2b;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* espace entre icône et texte */
+}
+
+.icon-clock {
+    width: 24px;        /* largeur fixe */
+    height: 24px;       /* hauteur fixe */
+    flex-shrink: 0;     /* empêche le rétrécissement */
+    vertical-align: middle;
+}
+
+.horaires table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.horaires td {
+    padding: 8px 5px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.horaires tr:nth-child(odd) {
+    background-color: #f1faf1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .horaires h2 {
+        font-size: 1.5rem;
+    }
+
+    .horaires td {
+        font-size: 0.95rem;
+        padding: 6px 3px;
+    }
+
+    .icon-clock {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 footer {
