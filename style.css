@@ -15,7 +15,13 @@ body {
 
 /* Titre + message d'accueil */
 header {
-    padding: 20px 0;
+    background-color: #e0f2e0; /* vert pastel légèrement différent du reste de la page */
+    padding: 30px 15px;
+    border-radius: 12px;
+    margin-bottom: 40px; /* espace avec le carrousel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
