@@ -13,6 +13,7 @@ body {
     padding: 0 20px;
 }
 
+/* Titre + message d'accueil */
 header {
     padding: 20px 0;
 }
@@ -28,15 +29,16 @@ header {
     font-size: 1.5rem;
     color: #333;
     text-align: center;
-    max-width: 700px; /* limite la largeur du texte pour la lisibilité */
-    margin: 10px auto 30px auto; /* espace au-dessus et en-dessous */
+    max-width: 700px;
+    margin: 10px auto 30px auto;
     line-height: 1.5;
 }
 
+/* Section carrousel */
 .carousel {
     display: flex;
-    flex-direction: column; /* <-- empile les éléments verticalement */
-    align-items: center;    /* centre horizontalement */
+    flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
     margin: 40px auto;
     position: relative;
@@ -92,24 +94,24 @@ button.prev, button.next {
     cursor: pointer;
     border-radius: 50%;
     transition: background 0.3s;
-
-    position: absolute;    /* <-- on sort du flux flex */
-    top: 50%;              /* centre verticalement par rapport à .carousel */
+    position: absolute;
+    top: 50%;
     transform: translateY(-50%);
 }
 
 button.prev {
-    left: 10px;            /* à gauche de la zone du carrousel */
+    left: 10px;
 }
 
 button.next {
-    right: 10px;           /* à droite de la zone du carrousel */
+    right: 10px;
 }
 
 button.prev:hover, button.next:hover {
     background-color: #1e5c1e;
 }
 
+/* Section prestations */
 .services {
     margin: 50px 0;
 }
@@ -126,7 +128,7 @@ button.prev:hover, button.next:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* espace entre cartes */
+    gap: 15px;
 }
 
 .services-list li {
@@ -137,7 +139,6 @@ button.prev:hover, button.next:hover {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* Titres et descriptions centrés */
 .services-list h3 {
     font-size: 1.2rem;
     color: #2b7a2b;
@@ -149,7 +150,6 @@ button.prev:hover, button.next:hover {
     margin: 0;
 }
 
-/* Responsive */
 @media (max-width: 480px) {
     .services-list h3 {
         font-size: 1rem;
@@ -163,7 +163,7 @@ button.prev:hover, button.next:hover {
 .horaires {
     margin: 40px 0;
     padding: 20px;
-    background: #e6f2e6; /* vert très clair */
+    background: #e6f2e6;
     border-radius: 12px;
     max-width: 600px;
     margin-left: auto;
@@ -177,13 +177,13 @@ button.prev:hover, button.next:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* espace entre icône et texte */
+    gap: 10px;
 }
 
 .icon-clock {
-    width: 24px;        /* largeur fixe */
-    height: 24px;       /* hauteur fixe */
-    flex-shrink: 0;     /* empêche le rétrécissement */
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
     vertical-align: middle;
 }
 
@@ -219,6 +219,7 @@ button.prev:hover, button.next:hover {
     }
 }
 
+/* Bas de page */
 footer {
     margin-top: 40px;
     padding: 15px;

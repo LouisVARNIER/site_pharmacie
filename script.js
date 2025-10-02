@@ -48,7 +48,7 @@ function showCard(index) {
     });
 }
 
-function harmoniserLargeurCartesServices() {
+function harmoniserLargeurCartes() {
     const cartes = document.querySelectorAll('.services-list li');
     let largeurMax = 0;
 
@@ -65,9 +65,8 @@ function harmoniserLargeurCartesServices() {
     });
 }
 
-window.addEventListener('load', harmoniserLargeurCartesServices);
-window.addEventListener('resize', harmoniserLargeurCartesServices);
-
+window.addEventListener('load', harmoniserLargeurCartes);
+window.addEventListener('resize', harmoniserLargeurCartes);
 
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + produits.length) % produits.length;
