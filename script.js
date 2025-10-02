@@ -65,6 +65,40 @@ function harmoniserLargeurCartes() {
     });
 }
 
+// Affichage ou non de la Popup
+async function loadPopup() {
+    try {
+        const response = await fetch('data/popup.json');
+        const data = await response.json();
+
+        // Vérifie si le message existe et n'est pas vide
+        if (data.message && data.message.trim() !== "") {
+            const popupOverlay = document.getElementById('popup-overlay');
+            const popupContent = document.getElementById('popup-content');
+            const popupClose = document.querySelector('.popup-close');
+
+            popupContent.textContent = data.message;
+            popupOverlay.style.display = 'flex';
+
+            // Fermeture au clic sur la croix
+            popupClose.addEventListener('click', () => {
+                popupOverlay.style.display = 'none';
+            });
+
+            // Fermeture au clic sur l'overlay
+            popupOverlay.addEventListener('click', (e) => {
+                if (e.target === popupOverlay) {
+                    popupOverlay.style.display = 'none';
+                }
+            });
+        }
+    } catch (error) {
+        console.error("Erreur lors du chargement de la popup :", error);
+    }
+}
+
+// Appel au chargement de la page
+window.addEventListener('load', loadPopup);
 window.addEventListener('load', harmoniserLargeurCartes);
 window.addEventListener('resize', harmoniserLargeurCartes);
 
